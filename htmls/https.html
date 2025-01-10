@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- POP Up -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Admin page</title>
+    <link rel="stylesheet" href="/style/https.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="left">
+          <a href="/index.html"><img src="/image/traveller log.png" alt=""></a>
+      </div>
+      <div class="right">
+          <div class="right1">
+              <a href="/index.html">Home</a>
+              <a href="./discover.html">Discover</a>
+              <a href="./location.html">Location</a>
+              <a href="./about.html">About Us</a>
+              <!-- <a href="support.html">Support</a> -->
+              <a href="/htmls/support.html">Support</a>
+          </div>
+      </div>
+  </nav>
+  
+    <div id="mainList">
+      <div id="addPlace">Add place</div>
+      <div id="deletePlace">Delete place</div>
+      <div id="editPlace">Edit place</div>
+    </div>
+
+    <div id="container">
+      <!-- === adding form === -->
+      <form id="addingForm" style="display: none">
+        <div>
+          <label><b>Select Location</b></label>
+          <select id="category">
+            <option value="select country">Select Country</option>
+            <option value="america">America</option>
+            <option value="italy">Italy</option>
+            <option value="india">India</option>
+            <option value="scottland">Scottland</option>
+          </select>
+        </div>
+        <div class="inputDiv">
+            <input type="text" id="addTitle" placeholder="Country" required /><br />
+            <input type="text" id="addCity" placeholder="City" required /><br />
+            <input type="url" id="addMainImageUrl" placeholder="Image URL" required/><br />
+            <input type="text" id="addPrice" placeholder="Price" /><br />
+            <button id="post-btn">Post</button>
+        </div>
+      </form>
+      <!-- == deleting form == -->
+      <form id="deletingForm" style="display: none">
+        <div>
+          <label><b>Select Location</b></label>
+          <select id="category2">
+            <option value="select country">Select Country</option>
+            <option value="america">America</option>
+            <option value="italy">Italy</option>
+            <option value="india">India</option>
+            <option value="scottland">Scottland</option>
+          </select>
+        </div>
+        <div class="inputDiv">
+            <input type="text" id="deleteId" placeholder="Enter Id" required/><br>
+            <button id="delete-btn">Delete</button>
+        </div>
+          
+      </form>
+      <!-- === correction form -->
+      <form id="editForm" style="display: none">
+        <div>
+          <label><b>Select Location</b></label>
+          <select id="category3">
+            <option value="select country">Select Country</option>
+            <option value="america">America</option>
+            <option value="italy">Italy</option>
+            <option value="india">India</option>
+            <option value="scottland">Scottland</option>
+          </select>
+        </div>
+        <div class="inputDiv">
+            <input type="text" id="editId" placeholder="Enter Id" required /><br/>
+            <input type="text" id="editCountry" placeholder="Country" required /><br/>
+            <input type="text" id="editCity" placeholder="City" required /><br/>
+            <input type="url" id="editImageUrl" placeholder="Image URL" required/><br/>
+            <input type="text" id="editPrice" placeholder="Price" /><br/>
+            <button id="edit-btn">Edit</button>
+        </div>
+      </form>
+    </div> <br><hr><br>
+    <!-- search button and logo -->
+    <div class="searchLogo">
+      <input type="text" placeholder="city" id="city-input" />
+    <img id="search-button" src="https://www.pinclipart.com/picdir/big/485-4851736_free-png-search-icon-search-icon-free-download.png" alt="">
+    </div><h3 id="count-destination"></h3><br><hr><br>
+    <!-- table data append in table-->
+    <table id="tableData">
+     <thead>
+      <tr>
+        <th>Country</th>
+        <th>City</th>
+        <th>Image</th>
+        <th>Price</th>
+        <th>Delete</th>
+        <th>Edit</th>
+      </tr>
+     </thead>
+     <tbody id="tableBody"></tbody>
+    </table><br><hr><br>
+    <!-- pagintaion data append in this div -->
+    <div id="pagination-container"></div>
+
+
+  </body>
+
+  <script src="/javascript/https.js"></script>
+</html>

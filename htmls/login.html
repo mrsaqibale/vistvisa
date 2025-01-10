@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/style/login.css" />
+  <link rel="stylesheet" href="/htmls/SignUp.html" />
+  <script src="https://kit.fontawesome.com/66dd96b05e.js" crossorigin="anonymous"></script>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-box">
+      <h1>Login</h1>
+      <form action="">
+        <div class="input-group">
+          <div class="input-field">
+            <i class="fa-solid fa-user"></i>
+            <input type="email" id="email" placeholder="Email" />
+          </div>
+
+          <div class="input-field">
+            <i class="fa-solid fa-lock"></i>
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+
+          <div class="btn-field">
+            <button type="button" id="btn"> Login</button>
+          </div>
+          <div class="link-field">
+            <p>
+              Don't have an account?
+              <a href="signup.html">Create an account</a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+<script>
+
+  let signUpForm = document.querySelector("form");
+  btn.addEventListener("click", function (e) {
+    e.preventDefault();
+    let email = signUpForm.querySelector('input[type="email"]').value;;
+    let password = signUpForm.querySelector('input[type="password"]').value;
+    let userData = JSON.parse(localStorage.getItem("user-list"));
+    console.log(userData);
+
+    if(!userData){
+      alert("Please sign up first");
+      return;
+    }
+
+    if(userData && userData.email === email && userData.password === password){
+      alert("login successful");
+      window.location.href = '/index.html';
+    }else{
+      alert("Incorrect Details");
+    }
+
+  });
+</script>
+
+</html>
